@@ -6,15 +6,15 @@
 ---
 # yamllint disable rule:line-length
 site_name: >-
-  opentemplate
+  depverifier
 site_description: >-
-  All-in-one Python template. One click. Everything included.
+  Verify your dependencies - trust only well-maintained and reliable projects.
 site_url: >-
-  https://open-nudge.github.io/opentemplate/
+  https://open-nudge.github.io/depverifier/
 repo_url: >-
-  https://github.com/open-nudge/opentemplate
+  https://github.com/open-nudge/depverifier
 repo_name: >-
-  open-nudge/opentemplate
+  open-nudge/depverifier
 # yamllint enable rule:line-length
 
 exclude_docs: |

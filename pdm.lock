@@ -112,13 +112,31 @@ name = "annotated-types"
 version = "0.7.0"
 requires_python = ">=3.8"
 summary = "Reusable constraint types to use with typing.Annotated"
-groups = ["dev-all", "dev-docs", "dev-python"]
+groups = ["dev-all", "dev-docs", "dev-python", "dev-security"]
 dependencies = [
     "typing-extensions>=4.0.0; python_version < \"3.9\"",
 ]
 files = [
     {file = "annotated_types-0.7.0-py3-none-any.whl", hash = "sha256:1f02e8b43a8fbbc3f3e0d4f0f4bfc8131bcb4eebe8849b8e5c773f3a1c582a53"},
     {file = "annotated_types-0.7.0.tar.gz", hash = "sha256:aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"},
+]
+
+[[package]]
+name = "anyio"
+version = "4.10.0"
+requires_python = ">=3.9"
+summary = "High-level concurrency and networking framework on top of asyncio or Trio"
+groups = ["dev-all", "dev-security"]
+marker = "platform_system != \"Windows\" and python_version == \"3.11\""
+dependencies = [
+    "exceptiongroup>=1.0.2; python_version < \"3.11\"",
+    "idna>=2.8",
+    "sniffio>=1.1",
+    "typing-extensions>=4.5; python_version < \"3.13\"",
+]
+files = [
+    {file = "anyio-4.10.0-py3-none-any.whl", hash = "sha256:60e474ac86736bbfd6f210f7a61218939c318f43f9972497381f1c5e930ed3d1"},
+    {file = "anyio-4.10.0.tar.gz", hash = "sha256:3f3fae35c96039744587aa5b8371e7e8e603c0702999535961dd336026973ba6"},
 ]
 
 [[package]]
@@ -793,38 +811,38 @@ files = [
 
 [[package]]
 name = "cyclonedx-python-lib"
-version = "11.1.0"
+version = "10.4.1"
 requires_python = "<4.0,>=3.9"
 summary = "Python library for CycloneDX"
 groups = ["dev-all", "dev-release"]
 dependencies = [
     "license-expression<31,>=30",
     "packageurl-python<2,>=0.11",
-    "py-serializable<3.0.0,>=2.1.0",
+    "py-serializable<3.0.0,>=2.0.0",
     "sortedcontainers<3.0.0,>=2.4.0",
     "typing-extensions<5.0,>=4.6; python_version < \"3.13\"",
 ]
 files = [
-    {file = "cyclonedx_python_lib-11.1.0-py3-none-any.whl", hash = "sha256:9693d45d9ceac68aafad1536d79692a5bbc1878121e8b14dd2e087a55e108637"},
-    {file = "cyclonedx_python_lib-11.1.0.tar.gz", hash = "sha256:138f2564c5ae830882780e2b39a3f4bfafecc4ae000efa015dcd5b57a5469dcb"},
+    {file = "cyclonedx_python_lib-10.4.1-py3-none-any.whl", hash = "sha256:1073d5855cdab02b7367f037c47cb46f4c82cadbc745e063edbb9160290efda2"},
+    {file = "cyclonedx_python_lib-10.4.1.tar.gz", hash = "sha256:ee017dee867ffb9b449b955161fd235a7c6245e87a5169998e10a0ce61292efb"},
 ]
 
 [[package]]
 name = "cyclonedx-python-lib"
-version = "11.1.0"
+version = "10.4.1"
 extras = ["validation"]
 requires_python = "<4.0,>=3.9"
 summary = "Python library for CycloneDX"
 groups = ["dev-all", "dev-release"]
 dependencies = [
-    "cyclonedx-python-lib==11.1.0",
-    "jsonschema[format-nongpl]<5.0,>=4.25",
+    "cyclonedx-python-lib==10.4.1",
+    "jsonschema[format]<5.0,>=4.18",
     "lxml<7,>=4",
     "referencing>=0.28.4",
 ]
 files = [
-    {file = "cyclonedx_python_lib-11.1.0-py3-none-any.whl", hash = "sha256:9693d45d9ceac68aafad1536d79692a5bbc1878121e8b14dd2e087a55e108637"},
-    {file = "cyclonedx_python_lib-11.1.0.tar.gz", hash = "sha256:138f2564c5ae830882780e2b39a3f4bfafecc4ae000efa015dcd5b57a5469dcb"},
+    {file = "cyclonedx_python_lib-10.4.1-py3-none-any.whl", hash = "sha256:1073d5855cdab02b7367f037c47cb46f4c82cadbc745e063edbb9160290efda2"},
+    {file = "cyclonedx_python_lib-10.4.1.tar.gz", hash = "sha256:ee017dee867ffb9b449b955161fd235a7c6245e87a5169998e10a0ce61292efb"},
 ]
 
 [[package]]
@@ -874,21 +892,6 @@ groups = ["dev-all", "dev-docs", "dev-release", "dev-security"]
 files = [
     {file = "defusedxml-0.7.1-py2.py3-none-any.whl", hash = "sha256:a352e7e428770286cc899e2542b6cdaedb2b4953ff269a210103ec58f6198a61"},
     {file = "defusedxml-0.7.1.tar.gz", hash = "sha256:1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69"},
-]
-
-[[package]]
-name = "deprecated"
-version = "1.2.18"
-requires_python = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
-summary = "Python @deprecated decorator to deprecate old python classes, functions or methods."
-groups = ["dev-all", "dev-security"]
-marker = "platform_system != \"Windows\" and python_version == \"3.11\""
-dependencies = [
-    "wrapt<2,>=1.10",
-]
-files = [
-    {file = "Deprecated-1.2.18-py2.py3-none-any.whl", hash = "sha256:bd5011788200372a32418f888e326a09ff80d0214bd961147cfed01b5c018eec"},
-    {file = "deprecated-1.2.18.tar.gz", hash = "sha256:422b6f6d859da6f2ef57857761bfb392480502a64c3028ca9bbe86085d72115d"},
 ]
 
 [[package]]
@@ -1198,12 +1201,70 @@ files = [
 ]
 
 [[package]]
+name = "h11"
+version = "0.16.0"
+requires_python = ">=3.8"
+summary = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
+groups = ["dev-all", "dev-security"]
+marker = "platform_system != \"Windows\" and python_version == \"3.11\""
+files = [
+    {file = "h11-0.16.0-py3-none-any.whl", hash = "sha256:63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86"},
+    {file = "h11-0.16.0.tar.gz", hash = "sha256:4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"},
+]
+
+[[package]]
 name = "htmlmin2"
 version = "0.1.13"
 summary = "An HTML Minifier"
 groups = ["dev-all", "dev-docs"]
 files = [
     {file = "htmlmin2-0.1.13-py3-none-any.whl", hash = "sha256:75609f2a42e64f7ce57dbff28a39890363bde9e7e5885db633317efbdf8c79a2"},
+]
+
+[[package]]
+name = "httpcore"
+version = "1.0.9"
+requires_python = ">=3.8"
+summary = "A minimal low-level HTTP client."
+groups = ["dev-all", "dev-security"]
+marker = "platform_system != \"Windows\" and python_version == \"3.11\""
+dependencies = [
+    "certifi",
+    "h11>=0.16",
+]
+files = [
+    {file = "httpcore-1.0.9-py3-none-any.whl", hash = "sha256:2d400746a40668fc9dec9810239072b40b4484b640a8c38fd654a024c7a1bf55"},
+    {file = "httpcore-1.0.9.tar.gz", hash = "sha256:6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"},
+]
+
+[[package]]
+name = "httpx"
+version = "0.28.1"
+requires_python = ">=3.8"
+summary = "The next generation HTTP client."
+groups = ["dev-all", "dev-security"]
+marker = "platform_system != \"Windows\" and python_version == \"3.11\""
+dependencies = [
+    "anyio",
+    "certifi",
+    "httpcore==1.*",
+    "idna",
+]
+files = [
+    {file = "httpx-0.28.1-py3-none-any.whl", hash = "sha256:d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad"},
+    {file = "httpx-0.28.1.tar.gz", hash = "sha256:75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc"},
+]
+
+[[package]]
+name = "httpx-sse"
+version = "0.4.1"
+requires_python = ">=3.9"
+summary = "Consume Server-Sent Event (SSE) messages with HTTPX."
+groups = ["dev-all", "dev-security"]
+marker = "platform_system != \"Windows\" and python_version == \"3.11\""
+files = [
+    {file = "httpx_sse-0.4.1-py3-none-any.whl", hash = "sha256:cba42174344c3a5b06f255ce65b350880f962d99ead85e776f23c6618a377a37"},
+    {file = "httpx_sse-0.4.1.tar.gz", hash = "sha256:8f44d34414bc7b21bf3602713005c5df4917884f76072479b21f68befa4ea26e"},
 ]
 
 [[package]]
@@ -1246,17 +1307,17 @@ files = [
 
 [[package]]
 name = "importlib-metadata"
-version = "7.1.0"
-requires_python = ">=3.8"
+version = "8.7.0"
+requires_python = ">=3.9"
 summary = "Read metadata from Python packages"
 groups = ["dev-all", "dev-docs", "dev-python", "dev-security"]
 dependencies = [
     "typing-extensions>=3.6.4; python_version < \"3.8\"",
-    "zipp>=0.5",
+    "zipp>=3.20",
 ]
 files = [
-    {file = "importlib_metadata-7.1.0-py3-none-any.whl", hash = "sha256:30962b96c0c223483ed6cc7280e7f0199feb01a0e40cfae4d4450fc6fab1f570"},
-    {file = "importlib_metadata-7.1.0.tar.gz", hash = "sha256:b78938b926ee8d5f020fc4772d487045805a55ddbad2ecf21c6d60938dc7fcd2"},
+    {file = "importlib_metadata-8.7.0-py3-none-any.whl", hash = "sha256:e5dd1551894c77868a30651cef00984d50e1002d06942a7101d34870c5f02afd"},
+    {file = "importlib_metadata-8.7.0.tar.gz", hash = "sha256:d13b81ad223b890aa16c5471f2ac3056cf76c5f10f82d6f9292f0b415f389000"},
 ]
 
 [[package]]
@@ -1442,19 +1503,21 @@ files = [
 
 [[package]]
 name = "jsonschema"
-version = "4.25.1"
-requires_python = ">=3.9"
+version = "4.20.0"
+requires_python = ">=3.8"
 summary = "An implementation of JSON Schema validation for Python"
 groups = ["dev-all", "dev-citation", "dev-docs", "dev-github", "dev-release", "dev-security"]
 dependencies = [
     "attrs>=22.2.0",
+    "importlib-resources>=1.4.0; python_version < \"3.9\"",
     "jsonschema-specifications>=2023.03.6",
+    "pkgutil-resolve-name>=1.3.10; python_version < \"3.9\"",
     "referencing>=0.28.4",
     "rpds-py>=0.7.1",
 ]
 files = [
-    {file = "jsonschema-4.25.1-py3-none-any.whl", hash = "sha256:3fba0169e345c7175110351d456342c364814cfcf3b964ba4587f22915230a63"},
-    {file = "jsonschema-4.25.1.tar.gz", hash = "sha256:e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"},
+    {file = "jsonschema-4.20.0-py3-none-any.whl", hash = "sha256:ed6231f0429ecf966f5bc8dfef245998220549cbbcf140f913b7464c52c3b6b3"},
+    {file = "jsonschema-4.20.0.tar.gz", hash = "sha256:4f614fd46d8d61258610998997743ec5492a648b33cf478c1ddc23ed4598a5fa"},
 ]
 
 [[package]]
@@ -1473,9 +1536,9 @@ files = [
 
 [[package]]
 name = "jsonschema"
-version = "4.25.1"
-extras = ["format-nongpl"]
-requires_python = ">=3.9"
+version = "4.20.0"
+extras = ["format"]
+requires_python = ">=3.8"
 summary = "An implementation of JSON Schema validation for Python"
 groups = ["dev-all", "dev-release"]
 dependencies = [
@@ -1483,16 +1546,15 @@ dependencies = [
     "idna",
     "isoduration",
     "jsonpointer>1.13",
-    "jsonschema==4.25.1",
+    "jsonschema==4.20.0",
     "rfc3339-validator",
-    "rfc3986-validator>0.1.0",
-    "rfc3987-syntax>=1.1.0",
+    "rfc3987",
     "uri-template",
-    "webcolors>=24.6.0",
+    "webcolors>=1.11",
 ]
 files = [
-    {file = "jsonschema-4.25.1-py3-none-any.whl", hash = "sha256:3fba0169e345c7175110351d456342c364814cfcf3b964ba4587f22915230a63"},
-    {file = "jsonschema-4.25.1.tar.gz", hash = "sha256:e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"},
+    {file = "jsonschema-4.20.0-py3-none-any.whl", hash = "sha256:ed6231f0429ecf966f5bc8dfef245998220549cbbcf140f913b7464c52c3b6b3"},
+    {file = "jsonschema-4.20.0.tar.gz", hash = "sha256:4f614fd46d8d61258610998997743ec5492a648b33cf478c1ddc23ed4598a5fa"},
 ]
 
 [[package]]
@@ -1558,17 +1620,6 @@ dependencies = [
 files = [
     {file = "jupytext-1.17.3-py3-none-any.whl", hash = "sha256:09b0a94cd904416e823a5ba9f41bd181031215b6fc682d2b5c18e68354feb17c"},
     {file = "jupytext-1.17.3.tar.gz", hash = "sha256:8b6dae76d63c95cad47b493c38f0d9c74491fb621dcd0980abfcac4c8f168679"},
-]
-
-[[package]]
-name = "lark"
-version = "1.2.2"
-requires_python = ">=3.8"
-summary = "a modern parsing library"
-groups = ["dev-all", "dev-release"]
-files = [
-    {file = "lark-1.2.2-py3-none-any.whl", hash = "sha256:c2276486b02f0f1b90be155f2c8ba4a8e194d42775786db622faccd652d8e80c"},
-    {file = "lark-1.2.2.tar.gz", hash = "sha256:ca807d0162cd16cef15a8feecb862d7319e7a09bdb13aef927968e45040fed80"},
 ]
 
 [[package]]
@@ -1800,6 +1851,31 @@ dependencies = [
 files = [
     {file = "matplotlib_inline-0.1.7-py3-none-any.whl", hash = "sha256:df192d39a4ff8f21b1895d72e6a13f5fcc5099f00fa84384e0ea28c2cc0653ca"},
     {file = "matplotlib_inline-0.1.7.tar.gz", hash = "sha256:8423b23ec666be3d16e16b60bdd8ac4e86e840ebd1dd11a30b9f117f2fa0ab90"},
+]
+
+[[package]]
+name = "mcp"
+version = "1.12.2"
+requires_python = ">=3.10"
+summary = "Model Context Protocol SDK"
+groups = ["dev-all", "dev-security"]
+marker = "platform_system != \"Windows\" and python_version == \"3.11\""
+dependencies = [
+    "anyio>=4.5",
+    "httpx-sse>=0.4",
+    "httpx>=0.27",
+    "jsonschema>=4.20.0",
+    "pydantic-settings>=2.5.2",
+    "pydantic<3.0.0,>=2.8.0",
+    "python-multipart>=0.0.9",
+    "pywin32>=310; sys_platform == \"win32\"",
+    "sse-starlette>=1.6.1",
+    "starlette>=0.27",
+    "uvicorn>=0.23.1; sys_platform != \"emscripten\"",
+]
+files = [
+    {file = "mcp-1.12.2-py3-none-any.whl", hash = "sha256:b86d584bb60193a42bd78aef01882c5c42d614e416cbf0480149839377ab5a5f"},
+    {file = "mcp-1.12.2.tar.gz", hash = "sha256:a4b7c742c50ce6ed6d6a6c096cca0e3893f5aecc89a59ed06d47c4e6ba41edcc"},
 ]
 
 [[package]]
@@ -2267,7 +2343,7 @@ files = [
 
 [[package]]
 name = "mkdocstrings"
-version = "0.30.0"
+version = "0.30.1"
 requires_python = ">=3.9"
 summary = "Automatic documentation from sources, for MkDocs."
 groups = ["dev-all", "dev-docs"]
@@ -2281,8 +2357,8 @@ dependencies = [
     "pymdown-extensions>=6.3",
 ]
 files = [
-    {file = "mkdocstrings-0.30.0-py3-none-any.whl", hash = "sha256:ae9e4a0d8c1789697ac776f2e034e2ddd71054ae1cf2c2bb1433ccfd07c226f2"},
-    {file = "mkdocstrings-0.30.0.tar.gz", hash = "sha256:5d8019b9c31ddacd780b6784ffcdd6f21c408f34c0bd1103b5351d609d5b4444"},
+    {file = "mkdocstrings-0.30.1-py3-none-any.whl", hash = "sha256:41bd71f284ca4d44a668816193e4025c950b002252081e387433656ae9a70a82"},
+    {file = "mkdocstrings-0.30.1.tar.gz", hash = "sha256:84a007aae9b707fb0aebfc9da23db4b26fc9ab562eb56e335e9ec480cb19744f"},
 ]
 
 [[package]]
@@ -2517,148 +2593,150 @@ files = [
 
 [[package]]
 name = "opentelemetry-api"
-version = "1.25.0"
-requires_python = ">=3.8"
+version = "1.37.0"
+requires_python = ">=3.9"
 summary = "OpenTelemetry Python API"
 groups = ["dev-all", "dev-security"]
 marker = "platform_system != \"Windows\" and python_version == \"3.11\""
 dependencies = [
-    "deprecated>=1.2.6",
-    "importlib-metadata<=7.1,>=6.0",
+    "importlib-metadata<8.8.0,>=6.0",
+    "typing-extensions>=4.5.0",
 ]
 files = [
-    {file = "opentelemetry_api-1.25.0-py3-none-any.whl", hash = "sha256:757fa1aa020a0f8fa139f8959e53dec2051cc26b832e76fa839a6d76ecefd737"},
-    {file = "opentelemetry_api-1.25.0.tar.gz", hash = "sha256:77c4985f62f2614e42ce77ee4c9da5fa5f0bc1e1821085e9a47533a9323ae869"},
+    {file = "opentelemetry_api-1.37.0-py3-none-any.whl", hash = "sha256:accf2024d3e89faec14302213bc39550ec0f4095d1cf5ca688e1bfb1c8612f47"},
+    {file = "opentelemetry_api-1.37.0.tar.gz", hash = "sha256:540735b120355bd5112738ea53621f8d5edb35ebcd6fe21ada3ab1c61d1cd9a7"},
 ]
 
 [[package]]
 name = "opentelemetry-exporter-otlp-proto-common"
-version = "1.25.0"
-requires_python = ">=3.8"
+version = "1.37.0"
+requires_python = ">=3.9"
 summary = "OpenTelemetry Protobuf encoding"
 groups = ["dev-all", "dev-security"]
 marker = "platform_system != \"Windows\" and python_version == \"3.11\""
 dependencies = [
-    "opentelemetry-proto==1.25.0",
+    "opentelemetry-proto==1.37.0",
 ]
 files = [
-    {file = "opentelemetry_exporter_otlp_proto_common-1.25.0-py3-none-any.whl", hash = "sha256:15637b7d580c2675f70246563363775b4e6de947871e01d0f4e3881d1848d693"},
-    {file = "opentelemetry_exporter_otlp_proto_common-1.25.0.tar.gz", hash = "sha256:c93f4e30da4eee02bacd1e004eb82ce4da143a2f8e15b987a9f603e0a85407d3"},
+    {file = "opentelemetry_exporter_otlp_proto_common-1.37.0-py3-none-any.whl", hash = "sha256:53038428449c559b0c564b8d718df3314da387109c4d36bd1b94c9a641b0292e"},
+    {file = "opentelemetry_exporter_otlp_proto_common-1.37.0.tar.gz", hash = "sha256:c87a1bdd9f41fdc408d9cc9367bb53f8d2602829659f2b90be9f9d79d0bfe62c"},
 ]
 
 [[package]]
 name = "opentelemetry-exporter-otlp-proto-http"
-version = "1.25.0"
-requires_python = ">=3.8"
+version = "1.37.0"
+requires_python = ">=3.9"
 summary = "OpenTelemetry Collector Protobuf over HTTP Exporter"
 groups = ["dev-all", "dev-security"]
 marker = "platform_system != \"Windows\" and python_version == \"3.11\""
 dependencies = [
-    "deprecated>=1.2.6",
     "googleapis-common-protos~=1.52",
     "opentelemetry-api~=1.15",
-    "opentelemetry-exporter-otlp-proto-common==1.25.0",
-    "opentelemetry-proto==1.25.0",
-    "opentelemetry-sdk~=1.25.0",
+    "opentelemetry-exporter-otlp-proto-common==1.37.0",
+    "opentelemetry-proto==1.37.0",
+    "opentelemetry-sdk~=1.37.0",
     "requests~=2.7",
+    "typing-extensions>=4.5.0",
 ]
 files = [
-    {file = "opentelemetry_exporter_otlp_proto_http-1.25.0-py3-none-any.whl", hash = "sha256:2eca686ee11b27acd28198b3ea5e5863a53d1266b91cda47c839d95d5e0541a6"},
-    {file = "opentelemetry_exporter_otlp_proto_http-1.25.0.tar.gz", hash = "sha256:9f8723859e37c75183ea7afa73a3542f01d0fd274a5b97487ea24cb683d7d684"},
+    {file = "opentelemetry_exporter_otlp_proto_http-1.37.0-py3-none-any.whl", hash = "sha256:54c42b39945a6cc9d9a2a33decb876eabb9547e0dcb49df090122773447f1aef"},
+    {file = "opentelemetry_exporter_otlp_proto_http-1.37.0.tar.gz", hash = "sha256:e52e8600f1720d6de298419a802108a8f5afa63c96809ff83becb03f874e44ac"},
 ]
 
 [[package]]
 name = "opentelemetry-instrumentation"
-version = "0.46b0"
-requires_python = ">=3.8"
+version = "0.58b0"
+requires_python = ">=3.9"
 summary = "Instrumentation Tools & Auto Instrumentation for OpenTelemetry Python"
 groups = ["dev-all", "dev-security"]
 marker = "platform_system != \"Windows\" and python_version == \"3.11\""
 dependencies = [
     "opentelemetry-api~=1.4",
-    "setuptools>=16.0",
+    "opentelemetry-semantic-conventions==0.58b0",
+    "packaging>=18.0",
     "wrapt<2.0.0,>=1.0.0",
 ]
 files = [
-    {file = "opentelemetry_instrumentation-0.46b0-py3-none-any.whl", hash = "sha256:89cd721b9c18c014ca848ccd11181e6b3fd3f6c7669e35d59c48dc527408c18b"},
-    {file = "opentelemetry_instrumentation-0.46b0.tar.gz", hash = "sha256:974e0888fb2a1e01c38fbacc9483d024bb1132aad92d6d24e2e5543887a7adda"},
+    {file = "opentelemetry_instrumentation-0.58b0-py3-none-any.whl", hash = "sha256:50f97ac03100676c9f7fc28197f8240c7290ca1baa12da8bfbb9a1de4f34cc45"},
+    {file = "opentelemetry_instrumentation-0.58b0.tar.gz", hash = "sha256:df640f3ac715a3e05af145c18f527f4422c6ab6c467e40bd24d2ad75a00cb705"},
 ]
 
 [[package]]
 name = "opentelemetry-instrumentation-requests"
-version = "0.46b0"
-requires_python = ">=3.8"
+version = "0.58b0"
+requires_python = ">=3.9"
 summary = "OpenTelemetry requests instrumentation"
 groups = ["dev-all", "dev-security"]
 marker = "platform_system != \"Windows\" and python_version == \"3.11\""
 dependencies = [
     "opentelemetry-api~=1.12",
-    "opentelemetry-instrumentation==0.46b0",
-    "opentelemetry-semantic-conventions==0.46b0",
-    "opentelemetry-util-http==0.46b0",
+    "opentelemetry-instrumentation==0.58b0",
+    "opentelemetry-semantic-conventions==0.58b0",
+    "opentelemetry-util-http==0.58b0",
 ]
 files = [
-    {file = "opentelemetry_instrumentation_requests-0.46b0-py3-none-any.whl", hash = "sha256:a8c2472800d8686f3f286cd524b8746b386154092e85a791ba14110d1acc9b81"},
-    {file = "opentelemetry_instrumentation_requests-0.46b0.tar.gz", hash = "sha256:ef0ad63bfd0d52631daaf7d687e763dbd89b465f5cb052f12a4e67e5e3d181e4"},
+    {file = "opentelemetry_instrumentation_requests-0.58b0-py3-none-any.whl", hash = "sha256:672a0be0bb5b52bea0c11820b35e27edcf4cd22d34abe4afc59a92a80519f8a8"},
+    {file = "opentelemetry_instrumentation_requests-0.58b0.tar.gz", hash = "sha256:ae9495e6ff64e27bdb839fce91dbb4be56e325139828e8005f875baf41951a2e"},
 ]
 
 [[package]]
 name = "opentelemetry-proto"
-version = "1.25.0"
-requires_python = ">=3.8"
+version = "1.37.0"
+requires_python = ">=3.9"
 summary = "OpenTelemetry Python Proto"
 groups = ["dev-all", "dev-security"]
 marker = "platform_system != \"Windows\" and python_version == \"3.11\""
 dependencies = [
-    "protobuf<5.0,>=3.19",
+    "protobuf<7.0,>=5.0",
 ]
 files = [
-    {file = "opentelemetry_proto-1.25.0-py3-none-any.whl", hash = "sha256:f07e3341c78d835d9b86665903b199893befa5e98866f63d22b00d0b7ca4972f"},
-    {file = "opentelemetry_proto-1.25.0.tar.gz", hash = "sha256:35b6ef9dc4a9f7853ecc5006738ad40443701e52c26099e197895cbda8b815a3"},
+    {file = "opentelemetry_proto-1.37.0-py3-none-any.whl", hash = "sha256:8ed8c066ae8828bbf0c39229979bdf583a126981142378a9cbe9d6fd5701c6e2"},
+    {file = "opentelemetry_proto-1.37.0.tar.gz", hash = "sha256:30f5c494faf66f77faeaefa35ed4443c5edb3b0aa46dad073ed7210e1a789538"},
 ]
 
 [[package]]
 name = "opentelemetry-sdk"
-version = "1.25.0"
-requires_python = ">=3.8"
+version = "1.37.0"
+requires_python = ">=3.9"
 summary = "OpenTelemetry Python SDK"
 groups = ["dev-all", "dev-security"]
 marker = "platform_system != \"Windows\" and python_version == \"3.11\""
 dependencies = [
-    "opentelemetry-api==1.25.0",
-    "opentelemetry-semantic-conventions==0.46b0",
-    "typing-extensions>=3.7.4",
+    "opentelemetry-api==1.37.0",
+    "opentelemetry-semantic-conventions==0.58b0",
+    "typing-extensions>=4.5.0",
 ]
 files = [
-    {file = "opentelemetry_sdk-1.25.0-py3-none-any.whl", hash = "sha256:d97ff7ec4b351692e9d5a15af570c693b8715ad78b8aafbec5c7100fe966b4c9"},
-    {file = "opentelemetry_sdk-1.25.0.tar.gz", hash = "sha256:ce7fc319c57707ef5bf8b74fb9f8ebdb8bfafbe11898410e0d2a761d08a98ec7"},
+    {file = "opentelemetry_sdk-1.37.0-py3-none-any.whl", hash = "sha256:8f3c3c22063e52475c5dbced7209495c2c16723d016d39287dfc215d1771257c"},
+    {file = "opentelemetry_sdk-1.37.0.tar.gz", hash = "sha256:cc8e089c10953ded765b5ab5669b198bbe0af1b3f89f1007d19acd32dc46dda5"},
 ]
 
 [[package]]
 name = "opentelemetry-semantic-conventions"
-version = "0.46b0"
-requires_python = ">=3.8"
+version = "0.58b0"
+requires_python = ">=3.9"
 summary = "OpenTelemetry Semantic Conventions"
 groups = ["dev-all", "dev-security"]
 marker = "platform_system != \"Windows\" and python_version == \"3.11\""
 dependencies = [
-    "opentelemetry-api==1.25.0",
+    "opentelemetry-api==1.37.0",
+    "typing-extensions>=4.5.0",
 ]
 files = [
-    {file = "opentelemetry_semantic_conventions-0.46b0-py3-none-any.whl", hash = "sha256:6daef4ef9fa51d51855d9f8e0ccd3a1bd59e0e545abe99ac6203804e36ab3e07"},
-    {file = "opentelemetry_semantic_conventions-0.46b0.tar.gz", hash = "sha256:fbc982ecbb6a6e90869b15c1673be90bd18c8a56ff1cffc0864e38e2edffaefa"},
+    {file = "opentelemetry_semantic_conventions-0.58b0-py3-none-any.whl", hash = "sha256:5564905ab1458b96684db1340232729fce3b5375a06e140e8904c78e4f815b28"},
+    {file = "opentelemetry_semantic_conventions-0.58b0.tar.gz", hash = "sha256:6bd46f51264279c433755767bb44ad00f1c9e2367e1b42af563372c5a6fa0c25"},
 ]
 
 [[package]]
 name = "opentelemetry-util-http"
-version = "0.46b0"
-requires_python = ">=3.8"
+version = "0.58b0"
+requires_python = ">=3.9"
 summary = "Web util for OpenTelemetry"
 groups = ["dev-all", "dev-security"]
 marker = "platform_system != \"Windows\" and python_version == \"3.11\""
 files = [
-    {file = "opentelemetry_util_http-0.46b0-py3-none-any.whl", hash = "sha256:8dc1949ce63caef08db84ae977fdc1848fe6dc38e6bbaad0ae3e6ecd0d451629"},
-    {file = "opentelemetry_util_http-0.46b0.tar.gz", hash = "sha256:03b6e222642f9c7eae58d9132343e045b50aca9761fcb53709bd2b663571fdf6"},
+    {file = "opentelemetry_util_http-0.58b0-py3-none-any.whl", hash = "sha256:6c6b86762ed43025fbd593dc5f700ba0aa3e09711aedc36fd48a13b23d8cb1e7"},
+    {file = "opentelemetry_util_http-0.58b0.tar.gz", hash = "sha256:de0154896c3472c6599311c83e0ecee856c4da1b17808d39fdc5cce5312e4d89"},
 ]
 
 [[package]]
@@ -3007,19 +3085,19 @@ files = [
 
 [[package]]
 name = "protobuf"
-version = "4.25.8"
-requires_python = ">=3.8"
+version = "6.32.1"
+requires_python = ">=3.9"
 summary = ""
 groups = ["dev-all", "dev-security"]
 marker = "platform_system != \"Windows\" and python_version == \"3.11\""
 files = [
-    {file = "protobuf-4.25.8-cp310-abi3-win32.whl", hash = "sha256:504435d831565f7cfac9f0714440028907f1975e4bed228e58e72ecfff58a1e0"},
-    {file = "protobuf-4.25.8-cp310-abi3-win_amd64.whl", hash = "sha256:bd551eb1fe1d7e92c1af1d75bdfa572eff1ab0e5bf1736716814cdccdb2360f9"},
-    {file = "protobuf-4.25.8-cp37-abi3-macosx_10_9_universal2.whl", hash = "sha256:ca809b42f4444f144f2115c4c1a747b9a404d590f18f37e9402422033e464e0f"},
-    {file = "protobuf-4.25.8-cp37-abi3-manylinux2014_aarch64.whl", hash = "sha256:9ad7ef62d92baf5a8654fbb88dac7fa5594cfa70fd3440488a5ca3bfc6d795a7"},
-    {file = "protobuf-4.25.8-cp37-abi3-manylinux2014_x86_64.whl", hash = "sha256:83e6e54e93d2b696a92cad6e6efc924f3850f82b52e1563778dfab8b355101b0"},
-    {file = "protobuf-4.25.8-py3-none-any.whl", hash = "sha256:15a0af558aa3b13efef102ae6e4f3efac06f1eea11afb3a57db2901447d9fb59"},
-    {file = "protobuf-4.25.8.tar.gz", hash = "sha256:6135cf8affe1fc6f76cced2641e4ea8d3e59518d1f24ae41ba97bcad82d397cd"},
+    {file = "protobuf-6.32.1-cp310-abi3-win32.whl", hash = "sha256:a8a32a84bc9f2aad712041b8b366190f71dde248926da517bde9e832e4412085"},
+    {file = "protobuf-6.32.1-cp310-abi3-win_amd64.whl", hash = "sha256:b00a7d8c25fa471f16bc8153d0e53d6c9e827f0953f3c09aaa4331c718cae5e1"},
+    {file = "protobuf-6.32.1-cp39-abi3-macosx_10_9_universal2.whl", hash = "sha256:d8c7e6eb619ffdf105ee4ab76af5a68b60a9d0f66da3ea12d1640e6d8dab7281"},
+    {file = "protobuf-6.32.1-cp39-abi3-manylinux2014_aarch64.whl", hash = "sha256:2f5b80a49e1eb7b86d85fcd23fe92df154b9730a725c3b38c4e43b9d77018bf4"},
+    {file = "protobuf-6.32.1-cp39-abi3-manylinux2014_x86_64.whl", hash = "sha256:b1864818300c297265c83a4982fd3169f97122c299f56a56e2445c3698d34710"},
+    {file = "protobuf-6.32.1-py3-none-any.whl", hash = "sha256:2601b779fc7d32a866c6b4404f9d42a3f67c5b9f3f15b4db3cccabe06b95c346"},
+    {file = "protobuf-6.32.1.tar.gz", hash = "sha256:ee2469e4a021474ab9baafea6cd070e5bf27c7d29433504ddea1a4ee5850f68d"},
 ]
 
 [[package]]
@@ -3103,7 +3181,7 @@ name = "pydantic"
 version = "2.11.9"
 requires_python = ">=3.9"
 summary = "Data validation using Python type hints"
-groups = ["dev-all", "dev-docs", "dev-python"]
+groups = ["dev-all", "dev-docs", "dev-python", "dev-security"]
 dependencies = [
     "annotated-types>=0.6.0",
     "pydantic-core==2.33.2",
@@ -3120,7 +3198,7 @@ name = "pydantic-core"
 version = "2.33.2"
 requires_python = ">=3.9"
 summary = "Core functionality for Pydantic validation and serialization"
-groups = ["dev-all", "dev-docs", "dev-python"]
+groups = ["dev-all", "dev-docs", "dev-python", "dev-security"]
 dependencies = [
     "typing-extensions!=4.7.0,>=4.6.0",
 ]
@@ -3180,6 +3258,23 @@ files = [
     {file = "pydantic_core-2.33.2-pp311-pypy311_pp73-musllinux_1_1_x86_64.whl", hash = "sha256:82f68293f055f51b51ea42fafc74b6aad03e70e191799430b90c13d643059ebb"},
     {file = "pydantic_core-2.33.2-pp311-pypy311_pp73-win_amd64.whl", hash = "sha256:329467cecfb529c925cf2bbd4d60d2c509bc2fb52a20c1045bf09bb70971a9c1"},
     {file = "pydantic_core-2.33.2.tar.gz", hash = "sha256:7cb8bc3605c29176e1b105350d2e6474142d7c1bd1d9327c4a9bdb46bf827acc"},
+]
+
+[[package]]
+name = "pydantic-settings"
+version = "2.10.1"
+requires_python = ">=3.9"
+summary = "Settings management using Pydantic"
+groups = ["dev-all", "dev-security"]
+marker = "platform_system != \"Windows\" and python_version == \"3.11\""
+dependencies = [
+    "pydantic>=2.7.0",
+    "python-dotenv>=0.21.0",
+    "typing-inspection>=0.4.0",
+]
+files = [
+    {file = "pydantic_settings-2.10.1-py3-none-any.whl", hash = "sha256:a60952460b99cf661dc25c29c0ef171721f98bfcb52ef8d9ea4c943d7c8cc796"},
+    {file = "pydantic_settings-2.10.1.tar.gz", hash = "sha256:06f0062169818d0f5524420a360d632d5857b83cffd4d42fe29597807a1614ee"},
 ]
 
 [[package]]
@@ -3463,6 +3558,30 @@ files = [
 ]
 
 [[package]]
+name = "python-dotenv"
+version = "1.1.1"
+requires_python = ">=3.9"
+summary = "Read key-value pairs from a .env file and set them as environment variables"
+groups = ["dev-all", "dev-security"]
+marker = "platform_system != \"Windows\" and python_version == \"3.11\""
+files = [
+    {file = "python_dotenv-1.1.1-py3-none-any.whl", hash = "sha256:31f23644fe2602f88ff55e1f5c79ba497e01224ee7737937930c448e4d0e24dc"},
+    {file = "python_dotenv-1.1.1.tar.gz", hash = "sha256:a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"},
+]
+
+[[package]]
+name = "python-multipart"
+version = "0.0.20"
+requires_python = ">=3.8"
+summary = "A streaming multipart parser for Python"
+groups = ["dev-all", "dev-security"]
+marker = "platform_system != \"Windows\" and python_version == \"3.11\""
+files = [
+    {file = "python_multipart-0.0.20-py3-none-any.whl", hash = "sha256:8a62d3a8335e06589fe01f2a3e178cdcc632f3fbe0d492ad9ee0ec35aab1f104"},
+    {file = "python_multipart-0.0.20.tar.gz", hash = "sha256:8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13"},
+]
+
+[[package]]
 name = "pytz"
 version = "2025.2"
 summary = "World timezone definitions, modern and historical"
@@ -3476,8 +3595,8 @@ files = [
 name = "pywin32"
 version = "311"
 summary = "Python for Window Extensions"
-groups = ["dev-all", "dev-docs"]
-marker = "sys_platform == \"win32\" and platform_python_implementation != \"PyPy\""
+groups = ["dev-all", "dev-docs", "dev-security"]
+marker = "sys_platform == \"win32\" and platform_system != \"Windows\" and python_version == \"3.11\" or sys_platform == \"win32\" and platform_python_implementation != \"PyPy\""
 files = [
     {file = "pywin32-311-cp311-cp311-win32.whl", hash = "sha256:184eb5e436dea364dcd3d2316d577d625c0351bf237c4e9a5fabbcfa5a58b151"},
     {file = "pywin32-311-cp311-cp311-win_amd64.whl", hash = "sha256:3ce80b34b22b17ccbd937a6e78e7225d80c52f5ab9940fe0506a1a16f3dab503"},
@@ -3606,8 +3725,8 @@ files = [
 
 [[package]]
 name = "rdflib"
-version = "7.1.4"
-requires_python = "<4.0.0,>=3.8.1"
+version = "7.2.1"
+requires_python = ">=3.8.1"
 summary = "RDFLib is a Python library for working with RDF, a simple yet powerful language for representing information."
 groups = ["dev-all", "dev-release"]
 dependencies = [
@@ -3615,8 +3734,8 @@ dependencies = [
     "pyparsing<4,>=2.1.0",
 ]
 files = [
-    {file = "rdflib-7.1.4-py3-none-any.whl", hash = "sha256:72f4adb1990fa5241abd22ddaf36d7cafa5d91d9ff2ba13f3086d339b213d997"},
-    {file = "rdflib-7.1.4.tar.gz", hash = "sha256:fed46e24f26a788e2ab8e445f7077f00edcf95abb73bcef4b86cefa8b62dd174"},
+    {file = "rdflib-7.2.1-py3-none-any.whl", hash = "sha256:1a175bc1386a167a42fbfaba003bfa05c164a2a3ca3cb9c0c97f9c9638ca6ac2"},
+    {file = "rdflib-7.2.1.tar.gz", hash = "sha256:cf9b7fa25234e8925da8b1fb09700f8349b5f0f100e785fb4260e737308292ac"},
 ]
 
 [[package]]
@@ -3737,28 +3856,13 @@ files = [
 ]
 
 [[package]]
-name = "rfc3986-validator"
-version = "0.1.1"
-requires_python = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-summary = "Pure python rfc3986 validator"
+name = "rfc3987"
+version = "1.3.8"
+summary = "Parsing and validation of URIs (RFC 3986) and IRIs (RFC 3987)"
 groups = ["dev-all", "dev-release"]
 files = [
-    {file = "rfc3986_validator-0.1.1-py2.py3-none-any.whl", hash = "sha256:2f235c432ef459970b4306369336b9d5dbdda31b510ca1e327636e01f528bfa9"},
-    {file = "rfc3986_validator-0.1.1.tar.gz", hash = "sha256:3d44bde7921b3b9ec3ae4e3adca370438eccebc676456449b145d533b240d055"},
-]
-
-[[package]]
-name = "rfc3987-syntax"
-version = "1.1.0"
-requires_python = ">=3.9"
-summary = "Helper functions to syntactically validate strings according to RFC 3987."
-groups = ["dev-all", "dev-release"]
-dependencies = [
-    "lark>=1.2.2",
-]
-files = [
-    {file = "rfc3987_syntax-1.1.0-py3-none-any.whl", hash = "sha256:6c3d97604e4c5ce9f714898e05401a0445a641cfa276432b0a648c80856f6a3f"},
-    {file = "rfc3987_syntax-1.1.0.tar.gz", hash = "sha256:717a62cbf33cffdd16dfa3a497d81ce48a660ea691b1ddd7be710c22f00b4a0d"},
+    {file = "rfc3987-1.3.8-py2.py3-none-any.whl", hash = "sha256:10702b1e51e5658843460b189b185c0366d2cf4cff716f13111b0ea9fd2dce53"},
+    {file = "rfc3987-1.3.8.tar.gz", hash = "sha256:d3c4d257a560d544e9826b38bc81db676890c79ab9d7ac92b39c7a253d5ca733"},
 ]
 
 [[package]]
@@ -3980,8 +4084,8 @@ files = [
 
 [[package]]
 name = "semgrep"
-version = "1.136.0"
-requires_python = ">=3.9"
+version = "1.137.0"
+requires_python = ">=3.10"
 summary = "Lightweight static analysis for many languages. Find bug variants with patterns that look like source code."
 groups = ["dev-all", "dev-security"]
 marker = "platform_system != \"Windows\" and python_version == \"3.11\""
@@ -3994,13 +4098,15 @@ dependencies = [
     "defusedxml~=0.7.1",
     "exceptiongroup~=1.2.0",
     "glom~=22.1",
-    "jsonschema~=4.6",
-    "opentelemetry-api~=1.25.0",
-    "opentelemetry-exporter-otlp-proto-http~=1.25.0",
-    "opentelemetry-instrumentation-requests~=0.46b0",
-    "opentelemetry-sdk~=1.25.0",
+    "jsonschema~=4.20.0",
+    "mcp==1.12.2",
+    "opentelemetry-api~=1.37.0",
+    "opentelemetry-exporter-otlp-proto-http~=1.37.0",
+    "opentelemetry-instrumentation-requests~=0.58b0",
+    "opentelemetry-sdk~=1.37.0",
     "packaging>=21.0",
     "peewee~=3.14",
+    "pywin32==311; sys_platform == \"win32\"",
     "requests~=2.22",
     "rich~=13.5.2",
     "ruamel-yaml>=0.18.5",
@@ -4010,24 +4116,12 @@ dependencies = [
     "wcmatch~=8.3",
 ]
 files = [
-    {file = "semgrep-1.136.0-cp39.cp310.cp311.py39.py310.py311-none-macosx_10_14_x86_64.whl", hash = "sha256:a4b93e4338f52025c57d7720de684acd3e57a04646ce1a7cc9618d60d316c8ea"},
-    {file = "semgrep-1.136.0-cp39.cp310.cp311.py39.py310.py311-none-macosx_11_0_arm64.whl", hash = "sha256:c04a15e4e589dee123a5ac2010bb00986feb6028e48ec78610d0662590a6fa86"},
-    {file = "semgrep-1.136.0-cp39.cp310.cp311.py39.py310.py311-none-musllinux_1_0_aarch64.manylinux2014_aarch64.whl", hash = "sha256:790168218616a4fc277ea8c6b0454e702f2c04dfc44b2a075bed393eb614c286"},
-    {file = "semgrep-1.136.0-cp39.cp310.cp311.py39.py310.py311-none-musllinux_1_0_x86_64.manylinux2014_x86_64.whl", hash = "sha256:94dbd9a9f145ebd192441d5d826a1fba485f87496f353c5ba24ad2e16bc250ed"},
-    {file = "semgrep-1.136.0-cp39.cp310.cp311.py39.py310.py311-none-win_amd64.whl", hash = "sha256:e02713314c034f6db23e337ac0196f70d6f01486a26403322da7a5b4f808a66d"},
-    {file = "semgrep-1.136.0.tar.gz", hash = "sha256:e6be1750a08756bc2b626372ec95b10c857c36de6fafccd21b1065187626b440"},
-]
-
-[[package]]
-name = "setuptools"
-version = "80.9.0"
-requires_python = ">=3.9"
-summary = "Easily download, build, install, upgrade, and uninstall Python packages"
-groups = ["dev-all", "dev-security"]
-marker = "platform_system != \"Windows\" and python_version == \"3.11\""
-files = [
-    {file = "setuptools-80.9.0-py3-none-any.whl", hash = "sha256:062d34222ad13e0cc312a4c02d73f059e86a4acbfbdea8f8f76b28c99f306922"},
-    {file = "setuptools-80.9.0.tar.gz", hash = "sha256:f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"},
+    {file = "semgrep-1.137.0-cp310.cp311.py310.py311-none-macosx_10_14_x86_64.whl", hash = "sha256:4ff9cee52155458ea189385bd009355ec27abbf42c8007ee7552d483d29399fc"},
+    {file = "semgrep-1.137.0-cp310.cp311.py310.py311-none-macosx_11_0_arm64.whl", hash = "sha256:ac137c71385d7c93bb2127e9ae00a9573ade0b24236b734284479f466a21d39c"},
+    {file = "semgrep-1.137.0-cp310.cp311.py310.py311-none-musllinux_1_0_aarch64.manylinux2014_aarch64.whl", hash = "sha256:c13788c0d4dccbf3a64a15d394c450bfa25edbb7e7e81f77127d0575c1047c4f"},
+    {file = "semgrep-1.137.0-cp310.cp311.py310.py311-none-musllinux_1_0_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1f33b88d3b24b5b080dfbda5cd0b139ecfa69bcc24bfc8a12d430c30434e146e"},
+    {file = "semgrep-1.137.0-cp310.cp311.py310.py311-none-win_amd64.whl", hash = "sha256:59f14506a8f85763180ba31c4c7b5e5ce6da5acd53065553dcd9c36e52ea60cd"},
+    {file = "semgrep-1.137.0.tar.gz", hash = "sha256:7e51e6a0f3f20c42c260b63ed92ee5f8bc5825a5395b2652c38b981035d1da3d"},
 ]
 
 [[package]]
@@ -4064,6 +4158,18 @@ groups = ["dev-all", "dev-docs", "dev-markdown"]
 files = [
     {file = "smmap-5.0.2-py3-none-any.whl", hash = "sha256:b30115f0def7d7531d22a0fb6502488d879e75b260a9db4d0819cfb25403af5e"},
     {file = "smmap-5.0.2.tar.gz", hash = "sha256:26ea65a03958fa0c8a1c7e8c7a58fdc77221b8910f6be2131affade476898ad5"},
+]
+
+[[package]]
+name = "sniffio"
+version = "1.3.1"
+requires_python = ">=3.7"
+summary = "Sniff out which async library your code is running under"
+groups = ["dev-all", "dev-security"]
+marker = "platform_system != \"Windows\" and python_version == \"3.11\""
+files = [
+    {file = "sniffio-1.3.1-py3-none-any.whl", hash = "sha256:2f6da418d1f1e0fddd844478f41680e794e6051915791a034ff65e5f100525a2"},
+    {file = "sniffio-1.3.1.tar.gz", hash = "sha256:f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"},
 ]
 
 [[package]]
@@ -4110,6 +4216,21 @@ files = [
 ]
 
 [[package]]
+name = "sse-starlette"
+version = "3.0.2"
+requires_python = ">=3.9"
+summary = "SSE plugin for Starlette"
+groups = ["dev-all", "dev-security"]
+marker = "platform_system != \"Windows\" and python_version == \"3.11\""
+dependencies = [
+    "anyio>=4.7.0",
+]
+files = [
+    {file = "sse_starlette-3.0.2-py3-none-any.whl", hash = "sha256:16b7cbfddbcd4eaca11f7b586f3b8a080f1afe952c15813455b162edea619e5a"},
+    {file = "sse_starlette-3.0.2.tar.gz", hash = "sha256:ccd60b5765ebb3584d0de2d7a6e4f745672581de4f5005ab31c3a25d10b52b3a"},
+]
+
+[[package]]
 name = "stack-data"
 version = "0.6.3"
 summary = "Extract data from python stack frames and tracebacks for informative displays"
@@ -4122,6 +4243,22 @@ dependencies = [
 files = [
     {file = "stack_data-0.6.3-py3-none-any.whl", hash = "sha256:d5558e0c25a4cb0853cddad3d77da9891a08cb85dd9f9f91b9f8cd66e511e695"},
     {file = "stack_data-0.6.3.tar.gz", hash = "sha256:836a778de4fec4dcd1dcd89ed8abff8a221f58308462e1c4aa2a3cf30148f0b9"},
+]
+
+[[package]]
+name = "starlette"
+version = "0.48.0"
+requires_python = ">=3.9"
+summary = "The little ASGI library that shines."
+groups = ["dev-all", "dev-security"]
+marker = "platform_system != \"Windows\" and python_version == \"3.11\""
+dependencies = [
+    "anyio<5,>=3.6.2",
+    "typing-extensions>=4.10.0; python_version < \"3.13\"",
+]
+files = [
+    {file = "starlette-0.48.0-py3-none-any.whl", hash = "sha256:0764ca97b097582558ecb498132ed0c7d942f233f365b86ba37770e026510659"},
+    {file = "starlette-0.48.0.tar.gz", hash = "sha256:7e8cee469a8ab2352911528110ce9088fdc6a37d9876926e73da7ce4aa4c7a46"},
 ]
 
 [[package]]
@@ -4255,7 +4392,7 @@ name = "typing-inspection"
 version = "0.4.1"
 requires_python = ">=3.9"
 summary = "Runtime typing introspection tools"
-groups = ["dev-all", "dev-docs", "dev-python"]
+groups = ["dev-all", "dev-docs", "dev-python", "dev-security"]
 dependencies = [
     "typing-extensions>=4.12.0",
 ]
@@ -4295,6 +4432,23 @@ groups = ["dev-all", "dev-citation", "dev-docs", "dev-github", "dev-security"]
 files = [
     {file = "urllib3-2.5.0-py3-none-any.whl", hash = "sha256:e6b01673c0fa6a13e374b50871808eb3bf7046c4b125b216f6bf1cc604cff0dc"},
     {file = "urllib3-2.5.0.tar.gz", hash = "sha256:3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"},
+]
+
+[[package]]
+name = "uvicorn"
+version = "0.35.0"
+requires_python = ">=3.9"
+summary = "The lightning-fast ASGI server."
+groups = ["dev-all", "dev-security"]
+marker = "platform_system != \"Windows\" and python_version == \"3.11\" and sys_platform != \"emscripten\""
+dependencies = [
+    "click>=7.0",
+    "h11>=0.8",
+    "typing-extensions>=4.0; python_version < \"3.11\"",
+]
+files = [
+    {file = "uvicorn-0.35.0-py3-none-any.whl", hash = "sha256:197535216b25ff9b785e29a0b79199f55222193d47f820816e7da751e9bc8d4a"},
+    {file = "uvicorn-0.35.0.tar.gz", hash = "sha256:bc662f087f7cf2ce11a1d7fd70b90c9f98ef2e2831556dd078d131b96cc94a01"},
 ]
 
 [[package]]
